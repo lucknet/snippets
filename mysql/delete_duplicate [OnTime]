@@ -1,0 +1,4 @@
+CREATE TEMPORARY TABLE tmp AS SELECT MIN(`uuid`), `playerName` FROM `ontime-players` GROUP BY `playerName`;
+DELETE FROM `ontime-players`;
+INSERT INTO `ontime-players` SELECT * FROM fruits3_tmp;
+DROP TABLE tmp;
